@@ -1,1 +1,166 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Hướng dẫn & Bí kíp chơi Ngọc Rồng | TDStudio</title>
+  <meta name="description"
+        content="Tổng hợp hướng dẫn, bí kíp, cơ chế và các câu hỏi thường gặp khi chơi game Ngọc Rồng. Dành cho người mới và người chơi lâu năm."/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <style>
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
+      background:#f4f6f8;
+      color:#222;
+    }
+    header{
+      padding:16px 16px 8px;
+    }
+    h1{
+      font-size:22px;
+      margin:0 0 6px;
+    }
+    .intro{
+      font-size:14px;
+      color:#555;
+      line-height:1.5;
+    }
+
+    .search-box{
+      padding:12px 16px;
+      position:sticky;
+      top:0;
+      background:#f4f6f8;
+      z-index:10;
+    }
+    .search-box input{
+      width:100%;
+      padding:12px 14px;
+      font-size:15px;
+      border-radius:8px;
+      border:1px solid #ddd;
+      outline:none;
+    }
+
+    main{
+      padding:8px 16px 24px;
+    }
+    .section-title{
+      font-size:16px;
+      margin:12px 0 10px;
+      color:#444;
+    }
+
+    .post-list{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .post-card{
+      background:#fff;
+      border-radius:10px;
+      padding:14px;
+      box-shadow:0 1px 2px rgba(0,0,0,.06);
+    }
+    .post-card a{
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    }
+    .post-title{
+      font-size:17px;
+      margin:0 0 6px;
+      line-height:1.4;
+    }
+    .post-summary{
+      font-size:14px;
+      color:#555;
+      line-height:1.5;
+    }
+    .post-date{
+      margin-top:6px;
+      font-size:12px;
+      color:#888;
+    }
+
+    .empty{
+      font-size:14px;
+      color:#777;
+      padding:12px 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hướng dẫn & Bí kíp chơi Ngọc Rồng</h1>
+  <p class="intro">
+    Trang tổng hợp kiến thức, cơ chế và câu hỏi thường gặp cho người chơi game dạng Ngọc Rồng.
+  </p>
+</header>
+
+<div class="search-box">
+  <input id="searchInput"
+         type="search"
+         placeholder="Tìm câu hỏi: up đệ, reset chỉ số, build không nạp…" />
+</div>
+
+<main>
+  <div id="sectionTitle" class="section-title">Bài viết đề xuất</div>
+  <div id="postList" class="post-list"></div>
+</main>
+
+<script>
+  const MAX_RECOMMENDED = 10;
+
+  const postListEl = document.getElementById('postList');
+  const searchInput = document.getElementById('searchInput');
+  const sectionTitle = document.getElementById('sectionTitle');
+
+  let allPosts = [];
+
+  fetch('posts.json')
+    .then(r => r.json())
+    .then(posts => {
+      allPosts = posts.sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+      renderRecommended();
+    });
+
+  function renderRecommended(){
+    sectionTitle.textContent = 'Bài viết đề xuất';
+    renderPosts(allPosts.slice(0, MAX_RECOMMENDED));
+  }
+
+  function renderPosts(posts){
+    if(!posts.length){
+      postListEl.innerHTML = '<div class="empty">Không tìm thấy bài viết phù hợp.</div>';
+      return;
+    }
+    postListEl.innerHTML = posts.map(p => `
+      <article class="post-card">
+        <a href="${p.slug}">
+          <h2 class="post-title">${p.title}</h2>
+          <p class="post-summary">${p.summary || ''}</p>
+          ${p.date ? `<div class="post-date">Cập nhật: ${p.date}</div>` : ''}
+        </a>
+      </article>
+    `).join('');
+  }
+
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    if(!q){
+      renderRecommended();
+      return;
+    }
+    sectionTitle.textContent = 'Kết quả tìm kiếm';
+    const result = allPosts.filter(p =>
+      (p.title + ' ' + (p.summary||'')).toLowerCase().includes(q)
+    );
+    renderPosts(result);
+  });
+</script>
+
+</body>
+</html>
