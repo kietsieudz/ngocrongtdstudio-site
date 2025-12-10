@@ -2,9 +2,9 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <title>Hướng dẫn & Bí kíp chơi Ngọc Rồng | TDStudio</title>
+  <title>Góc Hướng Dẫn Ngọc Rồng TDStudio</title>
   <meta name="description"
-        content="Trang tổng hợp hướng dẫn, bí kíp, cơ chế và các câu hỏi thường gặp khi chơi game dạng Ngọc Rồng, được biên soạn bởi TDStudio." />
+        content="Nơi gom lại mẹo chơi, cách up đệ, build nhân vật và giải đáp những câu hỏi hay gặp khi chơi game kiểu Ngọc Rồng. Viết ngắn gọn, dễ hiểu cho người mới lẫn người chơi lâu năm." />
   <!-- Khóa zoom / pinch trên mobile -->
   <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -197,44 +197,44 @@
 <div class="page">
 
   <header>
-    <div class="brand">TDStudio · Guide</div>
+    <div class="brand">TDSTUDIO · NGỌC RỒNG</div>
     <h1>Hướng dẫn & Bí kíp chơi Ngọc Rồng</h1>
     <p class="intro">
-      Trang tổng hợp kiến thức, cơ chế và câu hỏi thường gặp dành cho người chơi game dạng Ngọc Rồng.
+      Nếu bạn đang loay hoay chuyện up đệ, chia điểm, chọn server hay farm đồ, đây là nơi gom lại những kinh nghiệm mình đúc kết khi chơi game kiểu Ngọc Rồng.
     </p>
-    <p class="sub-note">Tập trung vào trải nghiệm thực tế, không quảng cáo, không màu mè.</p>
+    <p class="sub-note">Viết theo kiểu bạn bè chỉ nhau chơi: ngắn gọn, dễ hiểu, đọc xong là áp dụng được.</p>
   </header>
 
   <div class="content">
     <div class="card">
 
       <div class="search-box">
-        <div class="search-label">Tìm nhanh câu hỏi</div>
+        <div class="search-label">Bạn đang thắc mắc điều gì?</div>
         <div class="search-input-wrap">
           <span>🔍</span>
           <input id="searchInput"
                  class="search-input"
                  type="search"
                  autocomplete="off"
-                 placeholder="Ví dụ: up đệ nhanh, reset chỉ số, build không nạp…" />
+                 placeholder="Ví dụ: up đệ nhanh, reset chỉ số, chơi không nạp…" />
         </div>
       </div>
 
       <div id="sectionTitle" class="section-title">
-        Bài viết đề xuất
+        Một vài bài nên đọc trước
         <small>(tối đa 10 bài mới nhất)</small>
       </div>
 
       <div id="postList" class="post-list">
-        <div class="loading">Đang tải danh sách bài viết…</div>
+        <div class="loading">Đang chuẩn bị danh sách bài viết…</div>
       </div>
 
     </div>
   </div>
 
   <footer>
-    NgocrongTDStudio · Hệ thống hướng dẫn text-only, tối ưu cho mobile.  
-    Nội dung được cập nhật thủ công bởi TDStudio.
+    NgocrongTDStudio – nơi ghi lại những kinh nghiệm chơi game kiểu Ngọc Rồng theo cách dễ hiểu nhất.  
+    Nội dung được bổ sung dần theo thời gian.
   </footer>
 
 </div>
@@ -259,7 +259,7 @@
 
       if (!allPosts.length) {
         postListEl.innerHTML =
-          '<div class="empty">Chưa có bài viết nào. Hãy thêm dữ liệu vào file <code>posts.json</code>.</div>';
+          '<div class="empty">Hiện chưa có bài viết nào được đăng. Mình sẽ bổ sung dần, bạn có thể quay lại sau nhé.</div>';
         return;
       }
       renderRecommended();
@@ -267,11 +267,11 @@
     .catch(err => {
       console.error(err);
       postListEl.innerHTML =
-        '<div class="empty">Không tải được danh sách bài viết. Kiểm tra file <code>posts.json</code>.</div>';
+        '<div class="empty">Không tải được danh sách bài viết. Bạn thử kiểm tra lại mạng hoặc tải lại trang nhé.</div>';
     });
 
   function renderRecommended(){
-    sectionTitle.textContent = 'Bài viết đề xuất';
+    sectionTitle.innerHTML = 'Một vài bài nên đọc trước <small>(tối đa 10 bài mới nhất)</small>';
     const subset = allPosts.slice(0, MAX_RECOMMENDED);
     renderPosts(subset);
   }
@@ -279,12 +279,12 @@
   function renderPosts(posts){
     if (!posts.length) {
       postListEl.innerHTML =
-        '<div class="empty">Không tìm thấy bài viết phù hợp với từ khóa.</div>';
+        '<div class="empty">Không tìm thấy bài nào khớp với từ khóa bạn vừa nhập. Thử gõ ngắn gọn hơn hoặc từ khác xem sao nhé.</div>';
       return;
     }
 
     postListEl.innerHTML = posts.map(p => {
-      const title   = p.title   || 'Bài viết không có tiêu đề';
+      const title   = p.title   || 'Bài viết chưa đặt tiêu đề';
       const slug    = p.slug    || '#';
       const summary = p.summary || '';
       const date    = p.date    || '';
@@ -309,7 +309,7 @@
   searchInput.addEventListener('input', () => {
     const q = searchInput.value.trim().toLowerCase();
     if (!q) {
-      sectionTitle.innerHTML = 'Bài viết đề xuất <small>(tối đa 10 bài mới nhất)</small>';
+      sectionTitle.innerHTML = 'Một vài bài nên đọc trước <small>(tối đa 10 bài mới nhất)</small>';
       renderRecommended();
       return;
     }
