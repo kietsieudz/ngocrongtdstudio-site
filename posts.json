@@ -4,34 +4,34 @@
     "slug": "posts/chon-hanh-tinh-khoi-dau.html",
     "date": "2025-12-11",
     "summary": "Hướng dẫn, phân tích các nhân vật khi mới chơi, tránh những sai lầm khiến chọn sai nhân vật khởi đầu không đúng cách chơi.",
-    "tags": ["hành tinh", "newbie", "hướng dẫn"]
+    "tags": ["hành tinh", "người mới", "hướng dẫn"]
   },
   {
     "title": "Mẹo cày sức mạnh cực nhanh khi mới chơi?",
     "slug": "posts/cach-tang-suc-manh-nhanh.html",
     "date": "2025-12-11",
     "summary": "Hướng dẫn cách gia tăng nhanh sức mạnh, chỉ số và trang bị khi mới bắt đầu cho người mới.",
-    "tags": ["sức mạnh", "chỉ số", "newbie"]
+    "tags": ["sức mạnh", "chỉ số", "người mới"]
   },
   {
-    "title": "Build nhân vật không nạp có chơi được lâu dài?",
-    "slug": "posts/build-khong-nap.html",
-    "date": "2025-01-03",
-    "summary": "Giải thích vì sao build không nạp vẫn chơi được, ưu nhược điểm và cách tối ưu sức mạnh theo thời gian.",
-    "tags": ["không nạp", "build", "kinh nghiệm"]
+    "title": "Chỉ số gốc sư phụ và đệ tử bao nhiêu là max?",
+    "slug": "posts/chi-so-goc-su-phu-de-tu-max.html",
+    "date": "2025-12-11",
+    "summary": "Giải thích chỉ số gốc bao nhiêu là max, cách tăng chỉ số lên cao hơn cho người mới.",
+    "tags": ["chỉ số", "cày cuốc", "hướng dẫn"]
   },
   {
-    "title": "Những sai lầm người mới thường gặp khi chơi Ngọc Rồng",
-    "slug": "posts/sai-lam-nguoi-moi.html",
-    "date": "2025-01-04",
-    "summary": "Tổng hợp các sai lầm phổ biến khiến người chơi mới yếu nhanh và nản sớm, kèm cách tránh hiệu quả.",
-    "tags": ["sai lầm", "newbie", "kinh nghiệm"]
+    "title": "Nên cày sư phụ hay đệ tử trước?",
+    "slug": "posts/cay-su-phu-hay-de-tu.html",
+    "date": "2025-12-11",
+    "summary": "Phân tích về việc nên cày sư phụ trước hay đệ tử trước sẽ nhanh hơn, tối ưu hơn.",
+    "tags": ["lựa chọn", "người mới", "kinh nghiệm"]
   },
   {
-    "title": "Nên chơi nhân vật chính hay nuôi đệ là hợp lý?",
-    "slug": "posts/choi-nhan-vat-hay-nuoi-de.html",
+    "title": "Đệ tử chiến thần là gì, up sao cho nhanh?",
+    "slug": "posts/de-tu-chien-than-la-gi-up-sao-cho-nhanh.html",
     "date": "2025-01-05",
-    "summary": "So sánh ưu nhược điểm giữa chơi nhân vật chính và tập trung nuôi đệ, phù hợp cho từng kiểu người chơi.",
-    "tags": ["nhân vật", "đệ tử", "so sánh"]
+    "summary": "Giải thích về đệ tử chiến thần, hướng dẫn cách up đệ tử chiến thần nhanh nhất, ít tốn tài nguyên.",
+    "tags": ["chiến thần", "đệ tử", "hướng dẫn"]
   }
 ]
