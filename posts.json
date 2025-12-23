@@ -1,16 +1,23 @@
 [
   {
+    "title": "Thông tin boss Thần Ma Namec.",
+    "slug": "posts/boss-than-ma-namec.html",
+    "date": "2025-12-24",
+    "summary": "Hướng dẫn chi tiết về boss thần ma namec cho người mới.",
+    "tags": ["Boss", "thần ma namec", "hướng dẫn"]
+  },
+  {
     "title": "Cách kiếm cần câu và câu cá kiếm cốt.",
     "slug": "posts/cach-kiem-can-cau-va-cau-ca.html",
     "date": "2025-12-24",
-    "summary": "Hướng dẫn chí tiết về chức năng câu cá cho người mới.",
+    "summary": "Hướng dẫn chi tiết về chức năng câu cá cho người mới.",
     "tags": ["Câu cá", "cốt chí tôn", "hướng dẫn"]
   },
   {
     "title": "Cốt chí tôn là gì? Cách kiếm và cách ép.",
     "slug": "posts/cot-chi-ton-la-gi.html",
     "date": "2025-12-24",
-    "summary": "Hướng dẫn chí tiết về cốt chí tôn cho người mới.",
+    "summary": "Hướng dẫn chi tiết về cốt chí tôn cho người mới.",
     "tags": ["Vật phẩm", "cốt chí tôn", "hướng dẫn"]
   },
   {
